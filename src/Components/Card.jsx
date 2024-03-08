@@ -1,6 +1,6 @@
 // import React from 'react'
 
-function Card({ user }) {
+function Card({ user, handleRemoveCard, index }) {
   return (
     <div className="w-52 h-full p-3 bg-zinc-100 flex flex-col items-center p-2 rounded-lg">
       <div className="image bg-zinc-200 w-[4vw] h-[4vw] rounded-full overflow-hidden">
@@ -16,7 +16,10 @@ function Card({ user }) {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ullam
         sequi adipisci totam, error odio.
       </p>
-      <button className="px-3 py-1 text-sm text-white font-semibold rounded-lg bg-red-600 mt-4">
+      <button
+        onClick={() => handleRemoveCard(index)}
+        className="px-3 py-1 text-sm text-white font-semibold rounded-lg bg-red-600 mt-4"
+      >
         Remove It
       </button>
     </div>

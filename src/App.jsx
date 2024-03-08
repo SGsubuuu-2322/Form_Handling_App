@@ -11,10 +11,14 @@ function App() {
     setUsers([...users, data]);
   };
 
+  const handleRemoveCard = (id) => {
+    setUsers((prev) => prev.filter((item, index) => index !== id));
+  };
+
   return (
     <div className="w-full h-screen bg-zinc-200 flex items-center justify-center">
       <div className="container mx-auto">
-        <Cards users={users} />
+        <Cards users={users} handleRemoveCard={handleRemoveCard} />
         <Form handleFormSubmitData={handleFormSubmitData} />
       </div>
     </div>
